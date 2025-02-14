@@ -9,7 +9,7 @@
 ```pip install pymysql```
 
 ## How to Show databases ?
-Install XAMPP Control Panel [XAMPP Control Panel](https://www.apachefriends.org/)
+Install [XAMPP Control Panel](https://www.apachefriends.org/)
 Then turn on :
 - Apache
 - MySQL
