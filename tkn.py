@@ -28,7 +28,7 @@ root.configure(bg='white')
 root.title("Database Connector")
 root.iconbitmap('images/logodb.ico')
 
-title1 = Label(root, text="Database Connector", font=("dubai", 20, "bold"), bg="white", fg="black")
+title1 = Label(root, text="Database Connector", font=("dubai", 20, "bold"), bg="white", fg="white")
 title1.pack(side=TOP, fill=X)
 
 F1 = Frame(root, bg="black", bd=5, relief=GROOVE)
