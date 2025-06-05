@@ -3,11 +3,9 @@
 
 ## Requirments Libraries
 - tkinter
-```pip install tk```
 - mysql-connector-python
-```pip install mysql-connector-python```
-```pip install pymysql```
-
+- pyodbc
+##### in `requirements.txt`
 ## How to Show databases ?
 Install [XAMPP Control Panel](https://www.apachefriends.org/)
 Then turn on :
