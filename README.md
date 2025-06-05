@@ -5,7 +5,7 @@
 - tkinter
 - mysql-connector-python
 - pyodbc
-##### in `requirements.txt`
+##### in `[requirements.txt](requirements.txt)`
 ## How to Show databases ?
 Install [XAMPP Control Panel](https://www.apachefriends.org/)
 Then turn on :
