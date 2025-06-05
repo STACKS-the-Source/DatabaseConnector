@@ -47,6 +47,25 @@ def showmssqldatabases():
     except Exception as e:
         L.config(text=f"MSSQL Error: {e}")
 
+
+
+def connect_to_database():
+    db_name = En1.get()
+    try:
+        conn = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="",
+            database=db_name
+        )
+        cursor = conn.cursor()
+        cursor.execute("SHOW TABLES")
+        tables = "\n".join([tbl[0] for tbl in cursor.fetchall()])
+        L.config(text=f"Connected to '{db_name}':\n\n{tables}")
+        conn.close()
+    except Exception as e:
+        L.config(text=f"Connection Error: {e}")
+
 root = Tk()
 root.geometry("1010x550+200+40")
 root.resizable(False, False)
