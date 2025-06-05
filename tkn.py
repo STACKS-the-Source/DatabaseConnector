@@ -9,6 +9,11 @@ from tkinter import *
 import mysql.connector
 import pyodbc
 
+
+
+
+
+
 def show_mysqldatabases():
     try:
                 # Change the password to your MySQL root password
@@ -58,7 +63,7 @@ F1.place(x=10, y=50, width=990, height=490)
 L = Label(F1, text="Your Databases", font=("dubai", 15, "bold"), bg="black", fg="white")
 L.pack(side=TOP, fill=X)
 
-button1 = Button(F1, text="Show Databases", font=("dubai", 15, "bold"), bg="black", fg="white", command=show_mysqldatabases)
+button1 = Button(F1, text="Show MySQL Databases", font=("dubai", 15, "bold"), bg="black", fg="white", command=show_mysqldatabases)
 button1.pack(side=TOP, fill=X)
 
 
