@@ -16,6 +16,7 @@ import threading
 def show_mysqldatabases():
     def task():
         try:
+            L.config(text="Loading...")  # Show loading message
             conn = mysql.connector.connect(
                 host="localhost",
                 user="root",
@@ -34,6 +35,7 @@ def show_mysqldatabases():
 def showmssqldatabases():
     def task():
         try:
+            L.config(text="Loading...")  # Show loading message
             conn_str = (
                 "DRIVER={SQL Server};"
                 "SERVER=localhost;"
