@@ -9,6 +9,8 @@ from tkinter import *
 import mysql.connector
 import pyodbc
 import threading
+from ctypes import windll
+windll.shcore.SetProcessDpiAwareness(1)
 
 
 
@@ -70,7 +72,7 @@ def connect_to_database():
         L.config(text=f"Connection Error: {e}")
 
 root = Tk()
-root.geometry("1010x550+200+40")
+root.geometry(f"{1010*2}x{550*2}+200+40")
 root.resizable(False, False)
 root.configure(bg='white')
 root.title("Database Connector")
@@ -80,7 +82,7 @@ title1 = Label(root, text="Database Connector", font=("dubai", 20, "bold"), bg="
 title1.pack(side=TOP, fill=X)
 
 F1 = Frame(root, bg="black", bd=5, relief=GROOVE)
-F1.place(x=10, y=50, width=990, height=490)
+F1.place(x=10, y=50, width=990*2, height=520*2)
 
 L = Label(F1, text="Your Databases", font=("dubai", 15, "bold"), bg="black", fg="white")
 L.pack(side=TOP, fill=X)
