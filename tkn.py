@@ -84,11 +84,11 @@ title1.pack(side=TOP, fill=X)
 F1 = Frame(root, bg="black", bd=5, relief=GROOVE)
 F1.place(x=10, y=50, width=990*2, height=520*2)
 
-L = Label(F1, text="Your Databases", font=("dubai", 15, "bold"), bg="black", fg="white")
-L.pack(side=TOP, fill=X)
+L = Label(F1, text="Your Databases", font=("dubai", 15, "bold"), bg="black", fg="white", wraplength=1900, justify=LEFT)
+L.pack(side=TOP, fill=X, padx=20, pady=10)
 
 button1 = Button(F1, text="Show MySQL Databases", font=("dubai", 15, "bold"), bg="black", fg="white", command=show_mysqldatabases)
-button1.pack(side=TOP, fill=X)
+button1.pack(side=TOP, fill=X, padx=10, pady=10)
 
 button2 = Button(F1, text="Show MSSQL Databases", font=("dubai", 15, "bold"), bg="black", fg="white", command=showmssqldatabases)
 button2.pack(side=TOP, fill=X)
