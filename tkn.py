@@ -91,7 +91,7 @@ button1 = Button(F1, text="Show MySQL Databases", font=("dubai", 15, "bold"), bg
 button1.pack(side=TOP, fill=X, padx=10, pady=10)
 
 button2 = Button(F1, text="Show MSSQL Databases", font=("dubai", 15, "bold"), bg="black", fg="white", command=showmssqldatabases)
-button2.pack(side=TOP, fill=X)
+button2.pack(side=TOP, fill=X, padx=10, pady=10)
 
 L1 = Label(F1, text="Database Name", font=("dubai", 15, "bold"), bg="black", fg="white")
 L1.pack(side=LEFT, fill=X)
