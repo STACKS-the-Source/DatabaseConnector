@@ -90,8 +90,6 @@ L.pack(side=TOP, fill=X)
 button1 = Button(F1, text="Show MySQL Databases", font=("dubai", 15, "bold"), bg="black", fg="white", command=show_mysqldatabases)
 button1.pack(side=TOP, fill=X)
 
-
-
 button2 = Button(F1, text="Show MSSQL Databases", font=("dubai", 15, "bold"), bg="black", fg="white", command=showmssqldatabases)
 button2.pack(side=TOP, fill=X)
 
@@ -100,5 +98,17 @@ L1.pack(side=LEFT, fill=X)
 
 En1 = Entry(F1, font=("dubai", 15, "bold"), bg="black", fg="white")
 En1.pack(side=LEFT, fill=X)
+
+def on_enter(e):
+    e.widget.config(bg="gray", fg="black")
+
+def on_leave(e):
+    e.widget.config(bg="black", fg="white")
+
+button1.bind("<Enter>", on_enter)
+button1.bind("<Leave>", on_leave)
+
+button2.bind("<Enter>", on_enter)
+button2.bind("<Leave>", on_leave)
 
 root.mainloop()
