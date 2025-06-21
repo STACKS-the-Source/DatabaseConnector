@@ -8,46 +8,47 @@
 from tkinter import *
 import mysql.connector
 import pyodbc
-
-
+import threading
 
 
 
 
 def show_mysqldatabases():
-    try:
-                # Change the password to your MySQL root password
-        conn = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password=""
-        )
-        cursor = conn.cursor()
-        cursor.execute("SHOW DATABASES")
-        databases = "\n".join([db[0] for db in cursor.fetchall()])
-        L.config(text=databases)
-        conn.close()
-    except Exception as e:
-        L.config(text=f"Error: {e}")
+    def task():
+        try:
+            conn = mysql.connector.connect(
+                host="localhost",
+                user="root",
+                password=""
+            )
+            cursor = conn.cursor()
+            cursor.execute("SHOW DATABASES")
+            databases = "\n".join([db[0] for db in cursor.fetchall()])
+            L.config(text=databases)
+            conn.close()
+        except Exception as e:
+            L.config(text=f"Error: {e}")
+
+    threading.Thread(target=task).start()
 
 def showmssqldatabases():
-    try:
-        # Change the password to your MSSql root password
-        conn_str = (
-            "DRIVER={SQL Server};"
-            "SERVER=localhost;"
-            "Trusted_Connection=yes;"
-        )
-        conn = pyodbc.connect(conn_str)
-        cursor = conn.cursor()
-        cursor.execute("SELECT name FROM master.sys.databases")
-        databases = "\n".join([row[0] for row in cursor.fetchall()])
-        L.config(text=databases)
-        conn.close()
-    except Exception as e:
-        L.config(text=f"MSSQL Error: {e}")
+    def task():
+        try:
+            conn_str = (
+                "DRIVER={SQL Server};"
+                "SERVER=localhost;"
+                "Trusted_Connection=yes;"
+            )
+            conn = pyodbc.connect(conn_str)
+            cursor = conn.cursor()
+            cursor.execute("SELECT name FROM master.sys.databases")
+            databases = "\n".join([row[0] for row in cursor.fetchall()])
+            L.config(text=databases)
+            conn.close()
+        except Exception as e:
+            L.config(text=f"MSSQL Error: {e}")
 
-
+    threading.Thread(target=task).start()
 
 def connect_to_database():
     db_name = En1.get()
