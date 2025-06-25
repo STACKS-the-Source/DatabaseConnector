@@ -10,7 +10,7 @@ import mysql.connector
 import pyodbc
 import threading
 from ctypes import windll
-windll.shcore.SetProcessDpiAwareness(1)
+windll.shcore.SetProcessDpiAwareness(2)
 
 
 
@@ -72,7 +72,7 @@ def connect_to_database():
         L.config(text=f"Connection Error: {e}")
 
 root = Tk()
-root.geometry(f"{1010*2}x{550*2}+200+40")
+root.geometry(f"2020x1100+200+40")
 root.resizable(False, False)
 root.configure(bg='white')
 root.title("Database Connector")
